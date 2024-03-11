@@ -1,0 +1,6 @@
+@FelipeDiasAzevedo.StoneX_HostAddress = http://localhost:5130
+
+GET {{FelipeDiasAzevedo.StoneX_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

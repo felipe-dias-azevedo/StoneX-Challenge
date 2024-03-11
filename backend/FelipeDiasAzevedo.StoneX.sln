@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipeDiasAzevedo.StoneX", "FelipeDiasAzevedo.StoneX\FelipeDiasAzevedo.StoneX.csproj", "{1465AFC6-40DD-4BC2-BEDE-4487C4004BCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipeDiasAzevedo.StoneX.Infra", "FelipeDiasAzevedo.StoneX.Infra\FelipeDiasAzevedo.StoneX.Infra.csproj", "{9D111700-5B81-471E-922B-A016005F021A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipeDiasAzevedo.StoneX.Business", "FelipeDiasAzevedo.StoneX.Business\FelipeDiasAzevedo.StoneX.Business.csproj", "{4CC990B1-5856-40EE-A17B-1F476E3365AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1465AFC6-40DD-4BC2-BEDE-4487C4004BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1465AFC6-40DD-4BC2-BEDE-4487C4004BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1465AFC6-40DD-4BC2-BEDE-4487C4004BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1465AFC6-40DD-4BC2-BEDE-4487C4004BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D111700-5B81-471E-922B-A016005F021A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D111700-5B81-471E-922B-A016005F021A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D111700-5B81-471E-922B-A016005F021A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D111700-5B81-471E-922B-A016005F021A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC990B1-5856-40EE-A17B-1F476E3365AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC990B1-5856-40EE-A17B-1F476E3365AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC990B1-5856-40EE-A17B-1F476E3365AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC990B1-5856-40EE-A17B-1F476E3365AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
