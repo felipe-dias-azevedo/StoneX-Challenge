@@ -48,7 +48,7 @@ public class ProductService : IProductService
         
         var model = _mapper.Map<ProductModel>(viewModel);
 
-        model.Id = new ObjectId(id);
+        model.BsonId = new ObjectId(id);
         model.UpdateDateTime = DateTime.UtcNow;
         
         await _productRepository.Update(model);

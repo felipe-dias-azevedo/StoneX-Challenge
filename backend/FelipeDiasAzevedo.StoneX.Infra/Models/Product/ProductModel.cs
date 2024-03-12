@@ -1,8 +1,11 @@
+using FelipeDiasAzevedo.StoneX.Infra.Configuration.Mongo;
 using FelipeDiasAzevedo.StoneX.Infra.Models.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace FelipeDiasAzevedo.StoneX.Infra.Models.Product;
 
+
+[BsonCollection("StoneX_Product")]
 public class ProductModel : GenericModel
 {
     [BsonElement(nameof(Name))]

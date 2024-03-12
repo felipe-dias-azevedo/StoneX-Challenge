@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FelipeDiasAzevedo.StoneX.Controllers.V1;
 
-[ApiVersion(1)]
-[Route("[controller]/v{version:apiVersion}")]
+[ApiVersion(1.0)]
+[Route("v{version:apiVersion}/[controller]")]
 public class ProductController : GenericController
 {
     private readonly IProductService _productService;

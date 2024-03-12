@@ -173,3 +173,6 @@ dist
 .pnp.*
 
 package-lock.json
+
+bin/
+obj/

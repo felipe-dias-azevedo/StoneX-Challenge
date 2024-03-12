@@ -1,5 +1,4 @@
 using FelipeDiasAzevedo.StoneX.Business.ViewModels.Product;
-using FelipeDiasAzevedo.StoneX.Infra.Models.Product;
 using FluentValidation;
 
 namespace FelipeDiasAzevedo.StoneX.Business.Validators;

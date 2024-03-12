@@ -1,4 +1,6 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
+using FelipeDiasAzevedo.StoneX.Infra.Configuration.Mongo;
 using FelipeDiasAzevedo.StoneX.Infra.Models.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -9,9 +11,9 @@ public abstract class GenericRepository <T> : IGenericRepository <T> where T : G
 {
     protected readonly IMongoCollection<T> _collection;
 
-    protected GenericRepository()
+    protected GenericRepository(IMongoDbContext ctx)
     {
-        
+        _collection = ctx.GetCollection<T>();
     }
     
     public async Task<List<T>> Find()
@@ -26,7 +28,7 @@ public abstract class GenericRepository <T> : IGenericRepository <T> where T : G
 
     public async Task<T?> FindById(ObjectId id)
     {
-        return await _collection.Find(c => c.Id == id).FirstOrDefaultAsync();
+        return await _collection.Find(c => c.BsonId == id).FirstOrDefaultAsync();
     }
 
     public async Task Insert(T model)
@@ -41,6 +43,6 @@ public abstract class GenericRepository <T> : IGenericRepository <T> where T : G
 
     public async Task Delete(ObjectId id)
     {
-        await _collection.FindOneAndDeleteAsync(c => c.Id == id);
+        await _collection.FindOneAndDeleteAsync(c => c.BsonId == id);
     }
 }
