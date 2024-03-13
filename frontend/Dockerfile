@@ -1,5 +1,7 @@
 FROM node:20.11-alpine
 
+ENV NEXT_PUBLIC_STONEX_BACKEND_URL "http://localhost:5130/"
+
 WORKDIR /app
 
 COPY package.json ./

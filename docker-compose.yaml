@@ -7,6 +7,8 @@ services:
     container_name: stonex-backend
     ports:
       - "5130:8080"
+    environment:
+      - DefaultConnections__ConnectionString=mongodb://stonex-mongo/stonex?authSource=admin
     networks:
       - stonex-network
     depends_on:

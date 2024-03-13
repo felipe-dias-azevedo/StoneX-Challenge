@@ -6,12 +6,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FormProductCard from "./FormProductCard";
 import { Dialog } from "@mui/material";
 import { ProductViewModel } from "@/models/product";
-import { deleteProduct, updateProduct } from "@/services/productService";
 import { useSnackbar } from "notistack";
+import { ProductContext } from "@/contexts/ProductContext";
 
 type ProductCardProps = {
   id: string;
@@ -31,11 +31,12 @@ export default function ProductCard({
   updateViewCallback,
 }: ProductCardProps) {
   const { enqueueSnackbar } = useSnackbar();
+  const productService = useContext(ProductContext);
 
   const [modalOpen, setModalOpen] = useState(false);
 
   const onSubmit = (data: ProductViewModel) => {
-    updateProduct(id, data)
+    productService.updateProduct(id, data)
       .then(() => {
         updateViewCallback();
         setModalOpen(false);
@@ -47,7 +48,7 @@ export default function ProductCard({
   };
 
   const onDelete = () => {
-    deleteProduct(id)
+    productService.deleteProduct(id)
       .then(() => {
         updateViewCallback();
       })

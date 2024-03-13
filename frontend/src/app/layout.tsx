@@ -6,6 +6,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
 import "./globals.css";
 import { SnackbarProvider } from "notistack";
+import { ProductProvider } from "@/contexts/ProductContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            <SnackbarProvider maxSnack={5}>{children}</SnackbarProvider>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <ProductProvider>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>
+              <SnackbarProvider maxSnack={5}>{children}</SnackbarProvider>
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </ProductProvider>
       </body>
     </html>
   );

@@ -2,22 +2,23 @@
 import List from "@mui/material/List";
 import Stack from "@mui/material/Stack";
 import HeaderBar from "@/components/HeaderBar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { Dialog, ListItem, Modal } from "@mui/material";
 import FormProductCard from "@/components/FormProductCard";
-import { getProducts, postProduct } from "@/services/productService";
 import { ProductModel, ProductViewModel } from "@/models/product";
 import { useSnackbar } from "notistack";
+import { ProductContext } from "@/contexts/ProductContext";
 
 export default function Home() {
   const { enqueueSnackbar } = useSnackbar();
+  const productService = useContext(ProductContext);
 
   const [products, setProducts] = useState<ProductModel[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
 
   const getProductsExternal = () => {
-    getProducts()
+    productService.getProducts()
       .then((data) => {
         setProducts(data);
         console.log(data);
@@ -33,7 +34,7 @@ export default function Home() {
   }, [setProducts]);
 
   const onSubmit = (data: ProductViewModel) => {
-    postProduct(data)
+    productService.postProduct(data)
       .then(() => {
         getProductsExternal();
         setModalOpen(false);
