@@ -32,11 +32,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    
-    app.UseCors(b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 }
 
-app.UseHttpsRedirection();
+app.UseCors(b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.UseAuthorization();
 

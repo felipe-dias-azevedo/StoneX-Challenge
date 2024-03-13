@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json ./
 
-RUN npm install --production --loglevel=error
+RUN npm install --production --loglevel=error --no-cache
 
 COPY ./ ./
 

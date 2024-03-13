@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    image: stonex-backend
+    container_name: stonex-backend
+    ports:
+      - "5130:8080"
+    networks:
+      - stonex-network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    container_name: stonex-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - stonex-network
+
+  frontend:
+    build: ./frontend
+    image: stonex-frontend
+    container_name: stonex-frontend
+    ports:
+      - "80:3000"
+    networks:
+      - stonex-network
+    depends_on:
+      - backend
+
+networks:
+  stonex-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+
